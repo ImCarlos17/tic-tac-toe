@@ -4,12 +4,12 @@ const moduleGame = (() => {
   const gameBoard = Array.from(spots).map((spot) => spot.textContent);
   let newGameBoard = [...gameBoard];
 
-  const Players = (player, marker) => {
+  const Player = (player, marker) => {
     return { player, marker };
   };
 
-  const player1 = Players("player1", "O");
-  const player2 = Players("player2", "X");
+  const player1 = Player("player1", "O");
+  const player2 = Player("player2", "X");
 
   let currentPlayer = player1;
 
@@ -22,13 +22,21 @@ const moduleGame = (() => {
     let position = e.target.dataset.spot;
 
     renderPlayerTurn(currentPlayer.marker);
+    addMarkerToBoard(position, currentPlayer.marker);
     controllerTurn();
-    addMarkerToBoard(spot, position, currentPlayer.marker);
+    renderMarkerToBoard(spot, currentPlayer.marker);
+    chooseWinner(newGameBoard);
   }
 
   const renderPlayerTurn = (currentPlayer) => {
     titleTurn.textContent = `Player ${currentPlayer}'s turn`;
   };
+
+  const addMarkerToBoard = (position, playerMarker) => {
+    newGameBoard[position] = playerMarker;
+  };
+
+  const renderMarkerToBoard = (spot, marker) => (spot.textContent = marker);
 
   const controllerTurn = () => {
     currentPlayer == player1
@@ -36,8 +44,5 @@ const moduleGame = (() => {
       : (currentPlayer = player1);
   };
 
-  const addMarkerToBoard = (spot, position, playerMarker) => {
-    newGameBoard[position] = playerMarker;
-    console.log(newGameBoard);
-  };
+  const chooseWinner = (board) => {};
 })();
