@@ -11,17 +11,19 @@
     <div class="container-grid">
       <div class="header"><h1>TIC TAC TOE</h1></div>
       <div class="main">
+        <h1 id="player-turn">Player X's turn</h1>
         <div class="board">
-          <div class="position" id="row1-col1"></div>
-          <div class="position" id="row1-col2"></div>
-          <div class="position" id="row1-col3"></div>
-          <div class="position" id="row2-col1"></div>
-          <div class="position" id="row2-col2"></div>
-          <div class="position" id="row2-col3"></div>
-          <div class="position" id="row3-col1"></div>
-          <div class="position" id="row3-col2"></div>
-          <div class="position" id="row3-col3"></div>
+          <div class="position" id="row1-col1" data-spot="0"></div>
+          <div class="position" id="row1-col2" data-spot="1"></div>
+          <div class="position" id="row1-col3" data-spot="2"></div>
+          <div class="position" id="row2-col1" data-spot="3"></div>
+          <div class="position" id="row2-col2" data-spot="4"></div>
+          <div class="position" id="row2-col3" data-spot="5"></div>
+          <div class="position" id="row3-col1" data-spot="6"></div>
+          <div class="position" id="row3-col2" data-spot="7"></div>
+          <div class="position" id="row3-col3" data-spot="8"></div>
         </div>
+        <button class="btn-restart">Restart</button>
       </div>
       <div class="footer">
         <p>Copyright &copy The Odin Project 2022</p>
