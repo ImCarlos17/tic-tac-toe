@@ -58,7 +58,6 @@ const moduleGame = (() => {
 
   const addMarkerToBoard = (position, playerMarker) => {
     newGameBoard[position] = playerMarker;
-    console.log(newGameBoard);
   };
 
   const renderMarkerToBoard = (spot, marker) => (spot.textContent = marker);
